@@ -28,3 +28,13 @@ Shimmer_FC32_PPG_A13_CAL （光体积描记法数据）
 ```
 这3行就足够了。
 运行第一个"1 delete useless.py"代码，就可以将需要的数据从原始数据"DefaultTrial_Session35_Shimmer_FC32_Calibrated_PC.txt"提取并保存到"time_gsr_ppg.txt"文件中。
+
+# 2. 对数据进行归一化
+对从文件"time_gsr_ppg.txt"中读取的皮肤电反应 (GSR) 和脉搏波 (PPG) 数据进行预处理，包括读取数据、数据类型转换为浮点型 (float)、计算最大最小值、归一化处理等操作。
+```
+gsr_normalized = (gsr_data - gsr_min) / (gsr_max - gsr_min)
+ppg_normalized = (ppg_data - ppg_min) / (ppg_max - ppg_min)
+```
+使用最小-最大归一化方法将GSR和PPG数据转换到[0,1]区间。这个过程是通过减去最小值再除以最大值与最小值的差值来实现的。
+最后将归一化后的数据保存到"normalized_time_gsr_ppg.txt"文件中。
+
