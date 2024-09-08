@@ -52,7 +52,7 @@ ppg_normalized = (ppg_data - ppg_min) / (ppg_max - ppg_min)
 Using the min-max normalization method, the GSR and PPG data are scaled into the [0,1] range. This is achieved by subtracting the minimum value and then dividing by the difference between the maximum and minimum values.
 Finally, the normalized data is saved to the "normalized_time_gsr_ppg.txt" file.
 
-# 3.按照时间戳切割数据
+# 3.按照时间戳切割数据（Cut the data according to the timestamps）
 在上一个[音乐播放器](https://github.com/motortor/Music-Player-with-Rating-Functionality)的项目中，我们已经可以记录实验者收听音乐时，对应的开始和结束的时间戳。
 第三个代码针对上一个项目结果的输出格式，读取其中的歌曲播放记录，包括歌曲ID、开始和结束时间，以及满意度fitness。
 然后对照播放记录，从"normalized_time_gsr_ppg.txt"文件中提取出每首歌在特定时间范围内的GSR和PPG数据，并将这些数据分别保存到GSR和PPG文件夹中，并以对应歌曲的名称命名txt文件。
